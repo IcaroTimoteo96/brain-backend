@@ -7,8 +7,8 @@ const knex = require('knex');
 const db = knex({
     client: 'pg',
     connection: {
-      host : process.env.PORT,
-      ssl: true
+      connectionString : process.env.PORT,
+      ssl: true,
     }
   });
 
