@@ -20,7 +20,7 @@ const app = express();
  app.use(cors());
 
 app.get('/',(req,res)=>{
-    res.send(database.users);
+    res.send('its working!');
 })
 app.post('/signin' , (req, res) => {
         db.select('email','hash').from('login')
