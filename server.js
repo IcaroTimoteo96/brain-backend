@@ -18,7 +18,7 @@ const app = express();
  app.use(cors());
 
 app.get('/',(req,res)=>{
-    res.send("its working");
+    res.send('its working');
 })
 app.post('/signin' , (req, res) => {
         db.select('email','hash').from('login')
@@ -94,6 +94,6 @@ app.put('/image',(req,res)=>{
     .catch(err=> res.status(400).json('not getting entries'))
 })
 
-app.listen(3000, ()=> {
-    console.log('app is running on port 3000');
-  })
+app.listen(process.env.PORT || 3000, ()=>{
+    console.log(`Server is listening on port ${process.env.PORT}`)
+});
